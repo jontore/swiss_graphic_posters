@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Experiment in Fläche und Raum</title>
+    <style media="screen">
+      :root {
+        --color-0: rgb(0, 0, 0);
+        --color-1: rgb(201, 41, 32);
+        --color-2: rgb(255, 255, 255);
+
+        --color-background: rgb(178, 155, 105);
+      }
+      body {
+        margin: 1em 0;
+        padding: 0;
+        background-color: var(--color-background);
+        font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+        letter-spacing: -0.01em
+        font-size: 49px;
+      }
+
+      .ex--triangle--container {
+        margin-bottom: 1em;
+      }
+
+      .ex--triangle {
+      }
+
+      .ex--triangle__0 {
+        fill: var(--color-0);
+      }
+
+      .ex--triangle__1 {
+        fill: var(--color-1);
+      }
+
+      .ex--triangle__2 {
+        fill: var(--color-2);
+      }
+
+      .ex--text {
+        padding: 0.8rem;
+      }
+
+      .ex--text__right {
+        justify-self: end;
+      }
+
+      .ex--text__title {
+        text-align: center;
+        font-size: 1.25em;
+        padding: 0;
+        margin: 0 0 0.5em 0;
+      }
+
+      .ex--text__info {
+        font-size: 0.5em;
+      }
+
+      .ex--text__label {
+        font-size: 0.15em;
+      }
+
+      .ex--grid {
+        display: grid;
+        grid-template-columns: [row1-start] 50% [row1-end row2-start] 50% [row2-end];
+      }
+
+      .ex--column__full {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      .ex--column__right {
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+
+      .ex--row__bottom {
+        align-self: end
+      }
+
+      @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 768px) {
+        .ex--text__title {
+          font-size: 1em;
+        }
+
+        .ex--text__info {
+          font-size: 0.24em;
+        }
+
+        .ex--text__label {
+          font-size: 0.4rem;
+        }
+
+        .ex--text {
+          padding: 0.3em 0.2em;
+        }
+
+        .ex--text__title {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="ex--grid">
+    <div class="ex--text ex--text__info">Kunstwerbemuseum Zürich</div>
+    <div class="ex--text ex--text__info ex--text__right">Ausstellung 25.August bis 30.September 1962</div>
+    <svg viewBox="0 0 125 130" class="ex--triangle--container ex--column__full">
+      <polygon class="ex--triangle ex--triangle__0" points="0,30 0,130 35,130 95,94 95,84" />
+      <polygon class="ex--triangle ex--triangle__1" points="20,0 125,0 125,30 30,84 20,80" />
+      <polygon class="ex--triangle ex--triangle__2" points="60,25 70,20 125,51 125,130 60,130" />
+      <polygon class="ex--triangle ex--triangle__0 ex--triangle__line" points="60,67 60,115 95,94 95,84" />
+      <polygon class="ex--triangle ex--triangle__0 ex--triangle__line" points="59.5,67.5 61,69 61,114 59.5,115" />
+    </svg>
+    <div class="ex--text ex--text__info ex--column__right ex--text__right">Baljeu Biedermann Cairoli Ernest Gorin Hill </br> Martin van Woerkom</div>
+    <h1 class="ex--text ex--text__title ex--column__full">Experiment in Fläche und Raum</h1>
+    <div class="ex--text ex--text__label ex--row__bottom"><div>Entwurf: Jörg Hamburger, Gruppe 3, Zürich</div><div>Druck: Hag & Söhne Zürich</div></div>
+    <div class="ex--text ex--text__info ex--text__right">
+      Offen: Montag 14-18 Dienstag-Freitag 10-12 14-18</br>
+      Dienstag und Donnerstag auch 20-22</br>
+      Samstag und Sonntag 10-12 14-17 Uhr
+    </div>
+    <script type="text/javascript">
+      function resize() {
+        document.body.style.fontSize = `${window.innerWidth/20}px`;
+      };
+
+      window.onresize = resize;
+      resize();
+    </script>
+  </body>
+</html>
