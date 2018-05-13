@@ -2,10 +2,82 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=./die_farbe.html" />
-  <title></title>
+  <title>Swiss Graphic Design</title>
+  <style media="screen">
+    :root {
+      --color-background: rgb(201, 41, 32);
+      --color-text: rgb(0, 0, 0);
+
+      --color-0: rgb(178, 155, 105);
+      --color-1: rgb(0, 0, 0);
+      --color-2: rgb(255, 255, 255);
+
+      --text-size-0: 2.43em;
+      --text-size-1: 0.5em;
+      --text-size-2: 0.05em;
+    }
+    body {
+      padding: 0;
+      background-color: var(--color-background);
+      color: var(--color-text);
+      font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-size: 49px;
+      padding: 0;
+      margin: 0.5em;
+    }
+
+    h1, h2, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a, a:visited {
+      text-decoration: none;
+    }
+
+    .sg--text--title {
+      text-align: right;
+      font-size: 4em;
+    }
+
+    .sg--text--title__sub {
+      text-align: right;
+      font-size: 1em;
+      color: var(--color-0);
+    }
+
+    .sg--text--highlight {
+      color: var(--color-2);
+    }
+
+    .sg--poster--list {
+      padding: 2em 0;
+    }
+    .sg--poster--item:nth-child(3n+1) .sg--poster--link {
+      color: var(--color-0);
+    }
+
+    .sg--poster--item:nth-child(3n+2) .sg--poster--link {
+      color: var(--color-1);
+    }
+
+    .sg--poster--item:nth-child(3n) .sg--poster--link {
+      color: var(--color-2);
+    }
+  </style>
 </head>
 <body>
-  <h1>Swiss graphical posters reproduced in css</h1>
+  <h1 class="sg--text--title"><span class="sg--text--highlight">Swiss</span></br>Graphic</br>Design</h1>
+  <p class="sg--text--title__sub">in css</p>
+  <ul class="sg--poster--list">
+      <li class="sg--poster--item"><a class="sg--poster--link" href="./die_farbe.html">die farbe</a></li>
+      <li class="sg--poster--item"><a class="sg--poster--link" href="./experiment_in_flache_und_raum.html">experiment in flache und raum</a></li>
+      <li class="sg--poster--item"><a class="sg--poster--link" href="./licht_und_bewegung.html">licht und bewegung</a></li>
+  </ul>
+  <script src="./resize.js" charset="utf-8"></script>
 </body>
 </html>
