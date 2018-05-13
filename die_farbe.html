@@ -186,20 +186,6 @@
       <div><div>
     </section>
 
-
-    <script type="text/javascript">
-      function resize() {
-        document.body.style.fontSize = `${window.innerWidth/20}px`;
-      };
-
-      window.onresize = resize;
-      resize();
-
-      document.body.addEventListener('click', function() {
-        const requestFullscreen = document.body.requestFullscreen || document.body.webkitrequestFullscreen;
-        requestFullscreen();
-      });
-    </script>
-
+    <script src="./resize.js" charset="utf-8"></script>
   </body>
 </html>

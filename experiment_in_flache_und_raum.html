@@ -10,6 +10,14 @@
         --color-2: rgb(255, 255, 255);
 
         --color-background: rgb(178, 155, 105);
+
+        --text-size-0: 1.25em;
+        --text-size-1: 0.5em;
+        --text-size-2: 0.15em;
+
+        --text-small-size-0: 1em;
+        --text-small-size-1: 0.24em;
+        --text-small-size-2: 0.4rem;
       }
       body {
         margin: 1em 0;
@@ -49,17 +57,17 @@
 
       .ex--text__title {
         text-align: center;
-        font-size: 1.25em;
+        font-size: var(--text-size-0);
         padding: 0;
         margin: 0 0 0.5em 0;
       }
 
       .ex--text__info {
-        font-size: 0.5em;
+        font-size: var(--text-size-1);
       }
 
       .ex--text__label {
-        font-size: 0.15em;
+        font-size: var(--text-size-2);
       }
 
       .ex--grid {
@@ -85,15 +93,15 @@
         and (min-device-width : 320px)
         and (max-device-width : 768px) {
         .ex--text__title {
-          font-size: 1em;
+          font-size: var(--text-small-size-0);
         }
 
         .ex--text__info {
-          font-size: 0.24em;
+          font-size: var(--text-small-size-1);
         }
 
         .ex--text__label {
-          font-size: 0.4rem;
+          font-size: var(--text-small-size-2);
         }
 
         .ex--text {
@@ -124,13 +132,6 @@
       Dienstag und Donnerstag auch 20-22</br>
       Samstag und Sonntag 10-12 14-17 Uhr
     </div>
-    <script type="text/javascript">
-      function resize() {
-        document.body.style.fontSize = `${window.innerWidth/20}px`;
-      };
-
-      window.onresize = resize;
-      resize();
-    </script>
+    <script src="./resize.js" charset="utf-8"></script>
   </body>
 </html>
