@@ -9,15 +9,18 @@
         --color-1: rgb(201, 41, 32);
         --color-2: rgb(255, 255, 255);
 
-        --color-background: rgb(178, 155, 105);
+        --color-background: rgb(189, 180, 161);
 
-        --text-size-0: 1.25em;
-        --text-size-1: 0.5em;
+        --text-size-0: 1.3em;
+        --text-size-1: 0.4em;
         --text-size-2: 0.15em;
+        --text-word-spacing-1: 0.7em;
 
         --text-small-size-0: 1em;
         --text-small-size-1: 0.24em;
         --text-small-size-2: 0.4rem;
+
+        --text-word-spacing-small-1: 0.3em;
       }
       body {
         margin: 1em 0;
@@ -52,7 +55,7 @@
       }
 
       .ex--text__right {
-        justify-self: end;
+        justify-self: left;
       }
 
       .ex--text__title {
@@ -64,6 +67,10 @@
 
       .ex--text__info {
         font-size: var(--text-size-1);
+      }
+
+      .ex--text__info_spaced {
+        word-spacing: (--text-word-spacing-1);
       }
 
       .ex--text__label {
@@ -104,6 +111,10 @@
           font-size: var(--text-small-size-2);
         }
 
+        .ex--text__info_spaced {
+          word-spacing: (--text-word-spacing-small-1);
+        }
+
         .ex--text {
           padding: 0.3em 0.2em;
         }
@@ -116,7 +127,7 @@
   </head>
   <body class="ex--grid">
     <div class="ex--text ex--text__info">Kunstwerbemuseum Zürich</div>
-    <div class="ex--text ex--text__info ex--text__right">Ausstellung 25.August bis 30.September 1962</div>
+    <div class="ex--text ex--text__info ex--text__info_spaced ex--text__right">Ausstellung 25.August bis 30.September 1962</div>
     <svg viewBox="0 0 125 130" class="ex--triangle--container ex--column__full">
       <polygon class="ex--triangle ex--triangle__0" points="0,30 0,130 35,130 95,94 95,84" />
       <polygon class="ex--triangle ex--triangle__1" points="20,0 125,0 125,30 30,84 20,80" />
@@ -124,7 +135,7 @@
       <polygon class="ex--triangle ex--triangle__0 ex--triangle__line" points="60,67 60,115 95,94 95,84" />
       <polygon class="ex--triangle ex--triangle__0 ex--triangle__line" points="59.5,67.5 61,69 61,114 59.5,115" />
     </svg>
-    <div class="ex--text ex--text__info ex--column__right ex--text__right">Baljeu Biedermann Cairoli Ernest Gorin Hill </br> Martin van Woerkom</div>
+    <div class="ex--text ex--text__info ex--text__info_spaced ex--column__right ex--text__right">Baljeu  Biedermann  Cairoli  Ernest  Gorin  Hill </br> Martin  van Woerkom</div>
     <h1 class="ex--text ex--text__title ex--column__full">Experiment in Fläche und Raum</h1>
     <div class="ex--text ex--text__label ex--row__bottom"><div>Entwurf: Jörg Hamburger, Gruppe 3, Zürich</div><div>Druck: Hag & Söhne Zürich</div></div>
     <div class="ex--text ex--text__info ex--text__right">
