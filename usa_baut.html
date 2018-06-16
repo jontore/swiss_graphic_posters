@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta property="rows" content="13.6" />
+
+    <title>Experiment in Fläche und Raum</title>
+    <style media="screen">
+      :root {
+        --text-size-0: 1.3em;
+        --text-size-1: 0.4em;
+        --text-size-2: 0.15em;
+        --text-word-spacing-1: 0.7em;
+
+        --text-small-size-0: 1em;
+        --text-small-size-1: 0.24em;
+        --text-small-size-2: 0.4rem;
+
+        --text-word-spacing-small-1: 0.3em;
+      }
+      body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+        letter-spacing: 0.02em;
+        font-weight: 500;
+        font-size: 49px;
+      }
+
+      .square {
+        /* transform: rotate(134deg); */
+        position: relative;
+        place-self: start stretch;
+        padding: 0em;
+        margin: 0;
+        background-size: 100% 100%;
+      }
+
+      .square__center {
+        align-self: center;
+      }
+
+      .square--0 {
+        width: 1em;
+        height: 1em;
+        /* margin: 0.125em; */
+      }
+
+      .square--1 {
+        width: 1.3em;
+        height: 1.3em;
+        /* margin: 0.25em; */
+      }
+
+      .square--2 {
+        width: 2em;
+        height: 2em;
+        /* margin: 0.25em; */
+      }
+
+      .square--3 {
+        width: 3em;
+        height: 3em;
+        /* margin: 0.55em; */
+      }
+
+      .square--4 {
+        width: 4em;
+        height: 4em;
+        /* margin: 0.9em; */
+      }
+
+      .square::before{
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+
+      .square--blue::before {
+        background-color: rgba(57, 74, 136, 0.6)
+      }
+
+      .square--red::before {
+        background-color: rgba(173, 7, 7, 0.56)
+      }
+
+      .square--blue__light::before {
+        background-color: rgba(119, 129, 202, 0.6)
+      }
+
+      .square--red__light::before {
+        background-color: rgba(230, 91, 91, 0.6)
+      }
+
+      .square--gray::before {
+        background-color: rgba(0, 0, 0, 0.3)
+      }
+
+      .us-grid-container-overlap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+      }
+
+      .us-grid {
+        display: grid;
+        grid-template-columns: 1.2em repeat(3, 1em) 1.2em 1em 1.2em 1.2em 0.8em 1.2em 0.4em repeat(2, 1.2em);
+        grid-template-rows: repeat(2, 1.2em) repeat(3, 1em) repeat(3, 1.2em) repeat(2, 1em) 1.2em 1.2em 1.2em;
+      }
+
+      .us-grid__rotate {
+        transform: rotate(-45deg);
+      }
+
+      .us-grid-overlap {
+        position: absolute;
+        top: 1em;
+        right: 0;
+        left: -0.4em;
+        bottom: 0;
+      }
+
+      .us-grid__text {
+        padding-bottom: 0.5em;
+      }
+
+      .us-row-0-0 {
+        grid-area: 1 / 8 / 1 / 8;
+        background-image: url('./img/ld_owens.png');
+      }
+
+      .us-row-0-1 {
+        grid-area: 1 / 9 / 1 / 14;
+        background-image: url('./img/philadelphia_saving_fund.png');
+      }
+
+      .us-row-1-0 {
+        grid-column-start: 8;
+        background-image: url('./img/john_funk.png');
+      }
+
+      .us-row-2-0 {
+        grid-column-start: 6;
+        grid-us-row-start: 2;
+        background-image: url('./img/museum_modern_art_ny.png');
+      }
+
+      .us-row-2-1 {
+        grid-area: 3 / 8 / 7 / 12;
+        background-image: url('./img/falling_water.png');
+      }
+
+      .us-row-2-2 {
+        grid-area: 6 / 14 / 6 / 14;
+        background-image: url('./img/sears.png');
+      }
+
+      .us-row-3-0 {
+        grid-area: 7 / 8 / 7 / 8;
+        background-image: url('./img/modern_block.png');
+      }
+
+      .us-row-3-1 {
+        grid-area: 7 / 11 / 9 / 13;
+        background-image: url('./img/bridge.png');
+      }
+
+      .us-row-4-0 {
+        grid-area: 8 / 1 / 8 / 1;
+        background-image: url('./img/shuckl_canning_company.png');
+      }
+
+      .us-row-4-1 {
+        grid-area: 8 / 2 / 12 / 6;
+        background-image: url('./img/rockerfeller.png');
+      }
+
+      .us-row-4-2 {
+        grid-area: 8 / 8 / 8 / 8;
+        background-image: url('./img/gropious_breuer_ford.png');
+      }
+
+      .us-row-4-3 {
+        grid-area: 7 / 10 / 9 / 12;
+        background-image: url('./img/bridge.png');
+      }
+
+      .us-row-4-4 {
+        grid-area: 8 / 13 / 8 / 13;
+        background-image: url('./img/carver_court.png');
+      }
+
+      .us-row-5-0 {
+        grid-area: 9 / 1 / 9 / 1;
+        background-image: url('./img/interior.png');
+      }
+
+      .us-row-5-1 {
+        grid-area: 9 / 7 / 10 / 9;
+        background-image: url('./img/shipping_platform.png');
+      }
+
+      .us-row-5-2 {
+        grid-area: 9/ 8 / 9 / 13;
+        background-image: url('./img/dam.png');
+      }
+
+      .us-row-5-3 {
+        grid-area: 9/ 12 / 9 / 12;
+        background-image: url('./img/metall_research.png');
+      }
+
+      .us-row-6-0 {
+        grid-area: 11 / 6 / 11 / 6;
+        background-image: url('./img/pools.png');
+      }
+
+      .us-row-7-0 {
+        grid-area: 12 / 6 / 13 / 8;
+        background-image: url('./img/overview_building.png');
+      }
+
+      .us-row-7-1 {
+        grid-area: 12 / 8 / 13 / 10;
+        background-image: url('./img/overview_houses.png');
+      }
+
+      .us-row-8-0 {
+        grid-area: 13 / 7 / 13 / 7;
+        background-image: url('./img/loyd_wright.png');
+        justify-self: end;
+        align-self: end;
+      }
+
+      .us-row-0__text {
+        grid-area: 1 / 6 / 1 / 13;
+        justify-self: end;
+      }
+
+      .us-row-1__text {
+        grid-area: 7 / 2 / 7 / 8;
+      }
+
+      .us-row-2__text {
+        grid-area: 14 / 6 / 14 / 13;
+        align-self: start;
+        justify-self: end;
+      }
+
+
+      .text-0 {
+        font-size: 1.2em;
+        font-weight: inherit;
+      }
+
+      .text-1 {
+        font-size: 0.45em;
+        font-weight: inherit;
+      }
+
+      .text-2 {
+        font-size: 0.35em;
+        letter-spacing: 0;
+        font-weight: inherit;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="us-grid-container-overlap">
+      <section class="us-grid us-grid__rotate us-grid-overlap">
+        <figure class="us-row-0-0 square square--0 square--blue">
+        </figure>
+        <figure class="us-row-0-1 square square--1 square--red__light">
+        </figure>
+
+        <figure class="us-row-1-0 square square--0 square--blue">
+        </figure>
+        <figure class="us-row-2-0 square square--0 square--red">
+        </figure>
+        <figure class="us-row-2-1 square square--4 square--red">
+        </figure>
+        <figure class="us-row-2-2 square square--0 square--red">
+        </figure>
+        <figure class="us-row-3-0 square square--0 square--blue">
+        </figure>
+
+        <figure class="us-row-4-0 square square--0 square--red"></figure>
+        <figure class="us-row-4-1 square square--4 square--gray"></figure>
+        <figure class="us-row-4-2 square square--0 square--blue__light"></figure>
+        <figure class="us-row-4-3 square square__center square--2 square--blue"></figure>
+        <figure class="us-row-4-4 square square--0 square--red__light"></figure>
+
+        <figure class="us-row-5-0 square square--0 square--blue"></figure>
+        <figure class="us-row-5-1 square square--0 square--gray"></figure>
+        <figure class="us-row-5-2 square square--3 square--blue"></figure>
+        <figure class="us-row-5-3 square square--0 square--gray"></figure>
+
+        <figure class="us-row-6-0 square square--0 square--blue"></figure>
+
+        <figure class="us-row-7-0 square square--1 square--gray"></figure>
+        <figure class="us-row-7-1 square square--1 square--gray"></figure>
+
+        <figure class="us-row-8-0 square square--0 square--red"></figure>
+      </section>
+    </div>
+    <section class="us-grid us-grid__text">
+      <h2 class="us-row-0__text text-1">kuntgewerbemuseum zürich</h2>
+      <h1 class="us-row-1__text text-0">USA baut</h1>
+      <h3 class="us-row-2__text text-2">9.september - 7.oktober 1945</h3>
+    <section>
+    <script src="./resize.js" charset="utf-8"></script>
+  </body>
+</html>
